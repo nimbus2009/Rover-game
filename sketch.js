@@ -74,7 +74,7 @@ function preload(){
 
     font=loadFont("Assets/Fonts/hck.ttf");
 
-    node_=loadImage("Assets/Misc/node.png");
+    //node_=loadImage("Assets/Misc/node.png");
     cursor_=loadImage("Assets/pointer.png");
 }
 
