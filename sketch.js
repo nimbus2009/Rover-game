@@ -193,6 +193,8 @@ function draw() {
         switch2.visible=false;
 
         stone.x=width+20;
+        
+        score=0;
 
         frameCount=0;
 
