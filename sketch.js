@@ -92,7 +92,7 @@ function setup() {
     rover.addAnimation("rover",rover_);
     rover.addAnimation("rover_",rover__);
     rover.scale=0.3;
-    rover.debug=true;
+    //rover.debug=true;
 
     inv=createSprite(width/2,height-50-ground.height/2,width*2,10);
     inv.visible=false;
@@ -582,7 +582,7 @@ function spawnEnemy() {
     ufo.scale=0.2;
     ufo.lifetime=Math.round(width/3)+15;
 
-    ufo.debug=true;
+    //ufo.debug=true;
 
     ufo.setCollider("circle",0,0,200);
 
