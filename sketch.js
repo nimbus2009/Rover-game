@@ -191,6 +191,8 @@ function draw() {
         settings.visible=!false;
         switch1.visible=false;
         switch2.visible=false;
+        
+        score=0;
 
         stone.x=width+20;
 
