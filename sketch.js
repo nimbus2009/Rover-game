@@ -211,7 +211,7 @@ function draw() {
             rules.visible=false;
             settings.visible=false;
             
-            alert(touches[0]);
+            //alert(touches[0]);
             
             touches=[];
 
