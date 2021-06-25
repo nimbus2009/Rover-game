@@ -201,7 +201,7 @@ function draw() {
         restart.visible=false;
         switchBtn.visible=false;
 
-        touches=[];
+        //touches=[];
 
         score=0;
 
