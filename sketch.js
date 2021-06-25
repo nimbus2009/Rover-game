@@ -210,6 +210,10 @@ function draw() {
             start.visible=false;
             rules.visible=false;
             settings.visible=false;
+            
+            alert(touches[0]);
+            
+            touches=[];
 
             click.play();
         }
