@@ -203,7 +203,7 @@ function draw() {
 
         touches=[];
 
-        score=0;
+        score$=0;
 
         if(mousePressedOver(start)) {
             state="play";
