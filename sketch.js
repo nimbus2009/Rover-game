@@ -205,8 +205,11 @@ function draw() {
 
         score=0;
         
-        if(touches.length>0&&(start.position.x-20<touches[0].x<start.position.x+20&&start.position.y-50<touches[0].y<start.position.y+50)) {
+        if(touches.length>0&&(start.position.x-20<mouseX<start.position.x+20&&start.position.y-50<mouseY<start.position.y+50)) {
             state="play";
+            
+            alert(mousex,mouseY);
+            
             console.log(state);
             start.visible=false;
             rules.visible=false;
@@ -221,7 +224,7 @@ function draw() {
 
         if(mousePressedOver(start)) {
             state="play";
-            console.log(state);
+            console.log(state+" is the state");
             start.visible=false;
             rules.visible=false;
             settings.visible=false;
