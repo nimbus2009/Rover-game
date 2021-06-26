@@ -205,7 +205,7 @@ function draw() {
 
         score=0;
 
-        if(mousePressedOver(start)||touches[0]==random(start.x-10,start.x+10)) {
+        if(mousePressedOver(start)||(touches.length>0&&start.position.x-10<mouseX>start.position.x+10)) {
             state="play";
             start.visible=false;
             rules.visible=false;
