@@ -207,7 +207,7 @@ function draw() {
 
         if(mousePressedOver(start)||(start.position.x-20<touches[0].x<start.position.x+20&&start.position.y-50<touches[0].y<start.position.y+50)) {
             state="play";
-            console.log(state + " is the gameState");
+            console.log(state);
             start.visible=false;
             rules.visible=false;
             settings.visible=false;
