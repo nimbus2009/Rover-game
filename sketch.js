@@ -204,14 +204,14 @@ function draw() {
 
         score=0;
 
-        if(mousePressedOver(start)) {
+        /*if(mousePressedOver(start)) {
             state="play";
             start.visible=false;
             rules.visible=false;
             settings.visible=false;
 
             click.play();
-        }
+        }*/
         if(mousePressedOver(rules)) {
             state="rules";
             start.visible=false;
