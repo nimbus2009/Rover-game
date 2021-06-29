@@ -97,9 +97,8 @@ function setup() {
     inv=createSprite(width/2,height-50-ground.height/2,width*2,10);
     inv.visible=false;
 
-    start=createImg("Assets/UI/start.png")
-    start.position(width/2,height/2);
-    start.mouseClicked(playstate);
+    start=createSprite(width/2,height/2,20,20);
+    start.addAnimation("start",start_);
 
     rules=createSprite(start.position.x,start.position.y+70,20,20);
     rules.addAnimation("rules",rules_);
@@ -202,16 +201,27 @@ function draw() {
         restart.visible=false;
         switchBtn.visible=false;
 
+        touches=[];
+
         score=0;
 
-        /*if(mousePressedOver(start)) {
+        if(touches.length>0) {
+            if(touches[0].x<start.position.x) {
+                state="play";
+            }
+            else {
+                touches=[]
+            }
+        }
+
+        if(mousePressedOver(start)) {
             state="play";
             start.visible=false;
             rules.visible=false;
             settings.visible=false;
 
             click.play();
-        }*/
+        }
         if(mousePressedOver(rules)) {
             state="rules";
             start.visible=false;
@@ -588,8 +598,4 @@ function spawnEnemy() {
     ufo$.add(ufo);
     console.log(xp);
     cx-=4;
-}
-
-function playstate() {
-    state="play";
 }
