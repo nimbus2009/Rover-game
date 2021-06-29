@@ -158,6 +158,8 @@ function setup() {
     stone$=new Group();
     block$=new Group();
     cloud$=new Group();
+    
+    touches=[];
 
 }
 
@@ -200,8 +202,6 @@ function draw() {
 
         restart.visible=false;
         switchBtn.visible=false;
-
-        touches=[];
 
         score=0;
 
