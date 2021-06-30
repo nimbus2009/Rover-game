@@ -214,12 +214,11 @@ function draw() {
                     rules.visible=false;
                     settings.visible=false;
                     
-                    alert("Get Ready to play!");
+                    alert("Dododo");
 
                     click.play();
                 }
-            }
-            else if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
+            
                 if(touches[0].y<rules.position.y+30&&touches[0].y>rules.position.y-30) {
                     state="rules";
                    
@@ -227,12 +226,11 @@ function draw() {
                     rules.visible=false;
                     settings.visible=false;
                     
-                    alert("Rules");
+                    alert("Dododo");
 
                     click.play();
                 }
-            }
-            else if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
+            
                 if(touches[0].y<settings.position.y+30&&touches[0].y>settings.position.y-30) {
                     state="set";
                    
@@ -240,7 +238,7 @@ function draw() {
                     rules.visible=false;
                     settings.visible=false;
                     
-                    alert("Settings");
+                    alert("Dododo");
 
                     click.play();
                 }
