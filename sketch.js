@@ -214,6 +214,7 @@ function draw() {
                     rules.visible=false;
                     settings.visible=false;
                     
+                    alert("Get Ready to play!");
 
                     click.play();
                 }
@@ -226,6 +227,7 @@ function draw() {
                     rules.visible=false;
                     settings.visible=false;
                     
+                    alert("Rules");
 
                     click.play();
                 }
@@ -238,11 +240,13 @@ function draw() {
                     rules.visible=false;
                     settings.visible=false;
                     
+                    alert("Settings");
 
                     click.play();
                 }
             }
             else {
+                alert("Great!");
                 touches=[];
             }
         }
