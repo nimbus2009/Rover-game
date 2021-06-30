@@ -220,10 +220,58 @@ function draw() {
                     touches=[];
                 }
             }
+            else if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
+                if(touches[0].y<rules.position.y+30&&touches[0].y>rules.position.y-30) {
+                    state="rules";
+                   
+                    start.visible=false;
+                    rules.visible=false;
+                    settings.visible=false;
+
+                    click.play();
+                }
+                else {
+                    touches=[];
+                }
+            }
+            else if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
+                if(touches[0].y<settings.position.y+30&&touches[0].y>settings.position.y-30) {
+                    state="set";
+                   
+                    start.visible=false;
+                    rules.visible=false;
+                    settings.visible=false;
+
+                    click.play();
+                }
+                else {
+                    touches=[];
+                }
+            }
             else {
                 touches=[]
             }
         }
+
+        /*if(touches.length>0) {
+            if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
+                if(touches[0].y<start.position.y+30&&touches[0].y>start.position.y-30) {
+                    state="play";
+                   
+                    start.visible=false;
+                    rules.visible=false;
+                    settings.visible=false;
+
+                    click.play();
+                }
+                else {
+                    touches=[];
+                }
+            }
+            else {
+                touches=[]
+            }
+        }*/
 
         if(mousePressedOver(start)) {
             state="play";
