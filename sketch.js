@@ -207,7 +207,12 @@ function draw() {
 
         if(touches.length>0) {
             if(touches[0].x<start.position.x) {
-                state="play";
+                if(touches[0].x>start.position.x-50) {
+                    state="play";
+                }
+                else {
+                    touches=[];
+                }
             }
             else {
                 touches=[]
