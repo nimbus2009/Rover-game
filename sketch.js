@@ -215,6 +215,8 @@ function draw() {
                     settings.visible=false;
 
                     click.play();
+
+                    touches=[];
                 }
             }
             if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
@@ -226,9 +228,11 @@ function draw() {
                     settings.visible=false;
 
                     click.play();
+
+                    touches=[];
                 }
             }
-            if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
+             if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
                 if(touches[0].y<settings.position.y+30&&touches[0].y>settings.position.y-30) {
                     state="set";
                    
@@ -237,6 +241,8 @@ function draw() {
                     settings.visible=false;
 
                     click.play();
+
+                    touches=[];
                 }
             }
         }
