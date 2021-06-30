@@ -215,8 +215,6 @@ function draw() {
                     settings.visible=false;
 
                     click.play();
-
-                    touches=[];
                 }
             }
             if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
@@ -228,8 +226,6 @@ function draw() {
                     settings.visible=false;
 
                     click.play();
-
-                    touches=[];
                 }
             }
              if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
@@ -241,8 +237,6 @@ function draw() {
                     settings.visible=false;
 
                     click.play();
-
-                    touches=[];
                 }
             }
         }
