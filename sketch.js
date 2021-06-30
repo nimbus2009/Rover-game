@@ -240,7 +240,7 @@ function draw() {
                 }
             }
             else {
-                touches=[]
+                alert("Great!");
             }
         }
 
