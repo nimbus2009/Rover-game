@@ -235,12 +235,15 @@ function draw() {
                     start.visible=false;
                     rules.visible=false;
                     settings.visible=false;
+                    
+                    alert("Dododo");
 
                     click.play();
                 }
             }
             else {
                 alert("Great!");
+                touches=[];
             }
         }
 
