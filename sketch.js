@@ -206,9 +206,15 @@ function draw() {
         score=0;
 
         if(touches.length>0) {
-            if(touches[0].x<start.position.x) {
+            if(touches[0].x<start.position.x+50) {
                 if(touches[0].x>start.position.x-50) {
                     state="play";
+                   
+                    start.visible=false;
+                    rules.visible=false;
+                    settings.visible=false;
+
+                    click.play();
                 }
                 else {
                     touches=[];
