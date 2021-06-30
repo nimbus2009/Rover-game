@@ -1,4 +1,4 @@
-/Environment
+//Environment
 var ground,inv;
 var sky;
 var cloud,cloud_;
