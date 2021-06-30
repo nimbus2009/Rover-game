@@ -1,4 +1,4 @@
-//Environment
+/Environment
 var ground,inv;
 var sky;
 var cloud,cloud_;
@@ -217,7 +217,7 @@ function draw() {
                     click.play();
                 }
             }
-            if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
+            else if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
                 if(touches[0].y<rules.position.y+30&&touches[0].y>rules.position.y-30) {
                     state="rules";
                    
@@ -228,7 +228,7 @@ function draw() {
                     click.play();
                 }
             }
-             if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
+            else if(touches[0].x<start.position.x+50&&touches[0].x>start.position.x-50) {
                 if(touches[0].y<settings.position.y+30&&touches[0].y>settings.position.y-30) {
                     state="set";
                    
@@ -238,6 +238,9 @@ function draw() {
 
                     click.play();
                 }
+            }
+            else {
+                touches=[]
             }
         }
 
@@ -249,7 +252,6 @@ function draw() {
                     start.visible=false;
                     rules.visible=false;
                     settings.visible=false;
-
                     click.play();
                 }
                 else {
