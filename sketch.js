@@ -478,17 +478,24 @@ function draw() {
 
         if(touches.length>0) {
             if(touches[0].y<down.position.y+50&&touches[0].y>down.position.y-50) {
-                if(touches[0].x<up.position.x+30&&touches[0].x>up.position.x-30) {
+                if(touches[0].x<up.position.x+50&&touches[0].x>up.position.x-50) {
                     rover.velocityY=-6;
-                    alert("UP");
+                    //alert("UP");
                 }
             
-                if(touches[0].x<down.position.x+30&&touches[0].x>down.position.x-30) {
+                if(touches[0].x<down.position.x+50&&touches[0].x>down.position.x-50) {
                     rover.setCollider("rectangle",0,rover.height-30,270,150);
                     rover.changeAnimation("rover_");
                 }
             }
+            else if(touches[0].y<switchBtn.position.y+50&&touches[0].y>switchBtn.position.y-50) {
+                if(touches[0].x<switchBtn.position.x+50&&touches[0].x>switchBtn.position.x-50) {
+                    state="pause";
+                }
+            }
         }
+        
+            
         
         if(touches.length==1) {
                rover.position.y-=100;
