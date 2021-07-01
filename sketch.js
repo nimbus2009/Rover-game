@@ -230,6 +230,8 @@ function draw() {
                         alert("Rules");
 
                         click.play();
+                        
+                        touches=[];
                     }
                     catch(err) {
                         alert(err);
