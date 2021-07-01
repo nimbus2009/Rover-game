@@ -470,7 +470,7 @@ function draw() {
             spawnEnemy();
         }
 
-        if(touches.length>0) {
+        /*if(touches.length>0) {
             if(touches[0].y<down.position.y+50&&touches[0].y>down.position.y-50) {
                 if(touches[0].x<up.position.x+30&&touches[0].x>up.position.x-30) {
                     rover.velocityY=-6;
@@ -482,7 +482,7 @@ function draw() {
                     rover.changeAnimation("rover_");
                 }
             }
-        }
+        }*/
         
         if(touches.length==1) {
                rover.velocityY=-6;
