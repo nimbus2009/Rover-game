@@ -401,8 +401,8 @@ function draw() {
         stone.velocityX=-4;
 
         rover.visible=true;
-        up.visible=true;
-        down.visible=true;
+        /*up.visible=true;
+        down.visible=true;*/
 
         if(stone.x==0) {
             stone.x=width+400;
@@ -485,6 +485,15 @@ function draw() {
             else {
                 touches=[];
             }
+        }
+        
+        if(touches.length==1) {
+               rover.velocityY=-6;
+               //alert("UP");
+        }
+        if(touches.length==2) {
+               rover.setCollider("rectangle",0,rover.height-30,270,150);
+               rover.changeAnimation("rover_");
         }
     
         rover.velocityY=2;
