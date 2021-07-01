@@ -434,6 +434,8 @@ function draw() {
         }
 
         ufo$.setVelocityXEach(-6);
+        
+        text("Tap anywhere on the screen\nto jump...\nMode- " + mode, 20,height-50);
 
         switch (mode) {
             case "survival" : score+=0.01;
