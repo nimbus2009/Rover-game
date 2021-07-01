@@ -209,6 +209,8 @@ function draw() {
         down.visible=false;
 
         stone.x=width+20;
+        
+        dt=0;
 
         score$=0;
 
