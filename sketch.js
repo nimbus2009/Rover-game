@@ -230,7 +230,7 @@ function draw() {
                     rules.visible=false;
                     settings.visible=false;
                     
-                    alert("Get ready to play!");
+                    alert("Get ready!");
 
                     click.play();
                 }
@@ -505,10 +505,8 @@ function draw() {
                rover.setCollider("rectangle",0,rover.height-30,270,150);
                rover.changeAnimation("rover_");
         }
-        else {
-        rover.velocityY=2;
-        }
         rover.debug=true;
+        rover.velocityY=2;
         
         if(rover.isTouching(inv)) {
             rover.position.y=inv.position.y-rover.height/2;
