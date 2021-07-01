@@ -220,15 +220,23 @@ function draw() {
                 }
             
                 if(touches[0].y<rules.position.y+30&&touches[0].y>rules.position.y-30) {
-                    state="rules";
+                    try {
+                        state="rules";
                    
-                    start.visible=false;
-                    rules.visible=false;
-                    settings.visible=false;
-                    
-                    alert("Rules");
+                        start.visible=false;
+                        rules.visible=false;
+                        settings.visible=false;
 
-                    click.play();
+                        alert("Rules");
+
+                        click.play();
+                    }
+                    catch(err) {
+                        alert(err);
+                    }
+                    finally {
+                        state="rules";
+                    }
                 }
             
                 if(touches[0].y<settings.position.y+30&&touches[0].y>settings.position.y-30) {
