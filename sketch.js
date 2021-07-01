@@ -353,10 +353,11 @@ function draw() {
             click.play();
         }
         if(touches.length>0) {
-            state="rules2";
+            dt=1;
         }
         if(dt==1) {
             state="rules2";
+            touches=[];
         }
     }
     else if(state=="rules2") {
@@ -368,6 +369,7 @@ function draw() {
         }
         if(dt==10) {
             state="rules3";
+            touches=[];
         }
     }
     else if(state=="rules3") {
@@ -379,6 +381,7 @@ function draw() {
         }
         if(dt==11) {
             state="rules4";
+            touches=[];
         }
     }
     else if(state=="rules4") {
@@ -390,6 +393,7 @@ function draw() {
         }
         if(dt==100) {
             state="start";
+            touches=[];
         }
     }
     else if(state=="play") {
