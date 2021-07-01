@@ -505,7 +505,7 @@ function draw() {
                rover.setCollider("rectangle",0,rover.height-30,270,150);
                rover.changeAnimation("rover_");
         }
-        rover.debug=true;
+        //rover.debug=true;
         rover.velocityY=2;
         
         if(rover.isTouching(inv)) {
