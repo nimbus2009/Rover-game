@@ -217,8 +217,6 @@ function draw() {
                     alert("Get ready to play!");
 
                     click.play();
-                    
-                    touches=[];
                 }
             
                 if(touches[0].y<rules.position.y+30&&touches[0].y>rules.position.y-30) {
@@ -231,8 +229,6 @@ function draw() {
                     alert("Rules");
 
                     click.play();
-                    
-                    touches=[];
                 }
             
                 if(touches[0].y<settings.position.y+30&&touches[0].y>settings.position.y-30) {
@@ -245,8 +241,6 @@ function draw() {
                     alert("Settings");
 
                     click.play();
-                    
-                    touches=[];
                 }
             }
             else {
