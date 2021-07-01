@@ -214,7 +214,7 @@ function draw() {
                     rules.visible=false;
                     settings.visible=false;
                     
-                    alert("Dododo");
+                    alert("Get ready to play!");
 
                     click.play();
                     
@@ -228,7 +228,7 @@ function draw() {
                     rules.visible=false;
                     settings.visible=false;
                     
-                    alert("Dododo");
+                    alert("Rules");
 
                     click.play();
                     
@@ -242,7 +242,7 @@ function draw() {
                     rules.visible=false;
                     settings.visible=false;
                     
-                    alert("Dododo");
+                    alert("Settings");
 
                     click.play();
                     
