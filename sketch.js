@@ -482,9 +482,6 @@ function draw() {
                     rover.changeAnimation("rover_");
                 }
             }
-            else {
-                touches=[];
-            }
         }
         
         if(touches.length==1) {
@@ -494,6 +491,7 @@ function draw() {
         if(touches.length==2) {
                rover.setCollider("rectangle",0,rover.height-30,270,150);
                rover.changeAnimation("rover_");
+               alert("DOWN");
         }
     
         rover.velocityY=2;
