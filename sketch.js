@@ -348,6 +348,7 @@ function draw() {
             else {
                 state="start";   
             }
+        }
 
 
         if(mousePressedOver(switch1)) {
