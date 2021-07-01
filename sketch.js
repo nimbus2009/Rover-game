@@ -489,7 +489,7 @@ function draw() {
         
         if(touches.length==1) {
                rover.velocityY=-6;
-               //alert("UP");
+               alert("UP");
         }
         if(touches.length==2) {
                rover.setCollider("rectangle",0,rover.height-30,270,150);
