@@ -476,7 +476,7 @@ function draw() {
             spawnEnemy();
         }
 
-        if(touches.length>0) {
+        /*if(touches.length>0) {
             if(touches[0].y<down.position.y+50&&touches[0].y>down.position.y-50) {
                 if(touches[0].x<up.position.x+50&&touches[0].x>up.position.x-50) {
                     rover.velocityY=-6;
@@ -493,12 +493,12 @@ function draw() {
                     state="pause";
                 }
             }
-        }
+        }*/
         
             
         
         if(touches.length==1&&rover.position.y>height-300) {
-               rover.position.y-=100;
+               rover.position.y-=50;
                //alert("UP");
         }
         else if(touches.length==2) {
