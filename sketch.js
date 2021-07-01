@@ -497,7 +497,7 @@ function draw() {
         
             
         
-        if(touches.length==1) {
+        if(touches.length==1&&rover.position.y>height-300) {
                rover.position.y-=100;
                //alert("UP");
         }
