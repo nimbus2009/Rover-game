@@ -346,10 +346,9 @@ function draw() {
         }
     }
     else if(state=="rules2") {
-        touches=[];
         dt=0;
         text("In collection mode-\nCollecting an atom is\nworth 5 points and\ncollecting a cube is\nworth 10 points.\nWhile collecting points,\nremember to dodge the UFO's\nand obstacles.\n(Press space or tap\nanywhere to continue)",50,50);
-        if(keyWentDown("space")){
+        if(keyWentDown("space")||touches.length>0){
             dt=10;
             click.play();
         }
@@ -358,10 +357,9 @@ function draw() {
         }
     }
     else if(state=="rules3") {
-        touches=[];
         dt=0;
         text("In survival mode-\ncrossing a 'node' gives\n 1 point. All you have\nto do is to dodge\nthe UFO's and obstacles\n(Press space or tap\nanywhere to continue)",50,50);
-        if(keyWentDown("space")){
+        if(keyWentDown("space")||touches.length>0){
             click.play();
             dt=11;
         }
@@ -370,10 +368,9 @@ function draw() {
         }
     }
     else if(state=="rules4") {
-        touches=[];
         dt=0;
         text("Controls-\nIn a computer/laptop, press\nspace to jump the rover\nand press the down key\nto make the rover duck below.\nIn a touchscreen device(not\ntouchscreen laptops),controls are provided\nat the bottom-left corner.\nAlternatively,you can use the touch\ncontrols on a laptop/computer.\n(Press space or tap\nanywhere to continue)",50,50);
-        if(keyWentDown("space")){
+        if(keyWentDown("space")||touches.length>0){
             dt=100;
             click.play();
         }
