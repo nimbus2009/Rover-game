@@ -336,11 +336,13 @@ function draw() {
         }
     }
     else if(state=="rules") {
-        touches=[];
         text("You are a satellite\nspecialist at NASA,\nand the probe HERMES,\nis being chased by an alien!\nIt's your task to save\nit! Avoid the stones and\nenemy UFO's to save it!\n(Although they won't affect\nyou in pause state.)\n(Press space or tap\nanywhere to continue)",50,50);
-        if(keyWentDown("space")||touches.length>0){
+        if(keyWentDown("space")){
             dt=1;
             click.play();
+        }
+        if(touches.length>0) {
+            state="rules";
         }
         if(dt==1) {
             state="rules2";
