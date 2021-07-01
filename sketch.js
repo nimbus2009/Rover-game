@@ -217,6 +217,8 @@ function draw() {
                     alert("Dododo");
 
                     click.play();
+                    
+                    touches=[];
                 }
             
                 if(touches[0].y<rules.position.y+30&&touches[0].y>rules.position.y-30) {
@@ -229,6 +231,8 @@ function draw() {
                     alert("Dododo");
 
                     click.play();
+                    
+                    touches=[];
                 }
             
                 if(touches[0].y<settings.position.y+30&&touches[0].y>settings.position.y-30) {
@@ -241,6 +245,8 @@ function draw() {
                     alert("Dododo");
 
                     click.play();
+                    
+                    touches=[];
                 }
             }
             else {
