@@ -19,7 +19,7 @@ var restart,restart_;
 var settings,settings_;
 var switch1,switch2,circleYes,circleNo;
 var swicthBtn,switchPBtn,pause_,play_;
-var up,dow,up_,down_;
+var up,down,up_,down_;
 
 //Sounds
 var click,jump,gmov;
@@ -146,10 +146,20 @@ function setup() {
     stone.scale=0.75;
     stone.visible=false;
 
+    down=createSprite(50,height-50,40,40);
+    down.addAnimation("down",down_);
+    down.scale=0.5;
+    down.visible=false;
+
+    up=createSprite(100,height-50,40,40);
+    up.addAnimation("up",up_);
+    up.scale=0.5;
+    up.visible=false;
+
     cursor=createSprite(-10,-10,20,20);
     cursor.addAnimation("cursor",cursor_);
 
-    xp=Math.round(height-(height-rover.position.y)-rover.height/4);
+    xp=Math.round(rover.position.y);
     cx=600;
     dt=0;
     sd=0;
@@ -187,12 +197,16 @@ function draw() {
         rover.position.y=inv.position.y-rover.height/2;
     }
 
+    cursor.depth=down.depth+1;
+
     if(state=="start") {
         start.visible=!false;
         rules.visible=!false;
         settings.visible=!false;
         switch1.visible=false;
         switch2.visible=false;
+        up.visible=false;
+        down.visible=false;
 
         stone.x=width+20;
 
@@ -387,11 +401,14 @@ function draw() {
         stone.velocityX=-4;
 
         rover.visible=true;
+        up.visible=true;
+        down.visible=true;
 
         if(stone.x==0) {
             stone.x=width+400;
         }
 
+        ufo$.setVelocityXEach(-6);
 
         switch (mode) {
             case "survival" : score+=0.01;
@@ -452,6 +469,22 @@ function draw() {
         if(frameCount%Math.round(cx)==0) {
             spawnEnemy();
         }
+
+        if(touches.length>0) {
+            if(touches[0].y<down.position.y+50&&touches[0].y>down.position.y-50) {
+                if(touches[0].x<up.position.x+30&&touches[0].x>up.position.x-30) {
+                    rover.velocityY=-6;
+                }
+            
+                if(touches[0].x<down.position.x+30&&touches[0].x>down.position.x-30) {
+                    rover.setCollider("rectangle",0,rover.height-30,270,150);
+                    rover.changeAnimation("rover_");
+                }
+            }
+            else {
+                touches=[];
+            }
+        }
     
         rover.velocityY=2;
         
@@ -464,10 +497,10 @@ function draw() {
         }
     
 
-        if(keyDown("space")&&rover.position.y>height-300) {
+        if((keyDown("space")||mousePressedOver(up))&&rover.position.y>height-300) {
             rover.velocityY=-6;
         }
-        if(keyDown("down")) {
+        if(keyDown("down")||mousePressedOver(down)) {
             rover.setCollider("rectangle",0,rover.height-30,270,150);
             rover.changeAnimation("rover_");
         }
@@ -510,7 +543,7 @@ function draw() {
         atom.velocityX=0;
         cube.velocityX=0;
         stone.velocityX=0;
-        ufo$.velocityXEach=0;
+        ufo$.setVelocityXEach(0);
 
         textSize(20);
         textFont(font);
@@ -520,9 +553,6 @@ function draw() {
         restart.visible=true;
         switchPBtn.visible=true;
         switchBtn.visible=false;
-
-        var fr=frameCount;
-        frameCount=fr;
 
         block[0].velocityX=0;
         block[1].velocityX=0;
@@ -631,6 +661,18 @@ function spawnStones() {
     block[4].velocityX=-4;
     block[4].lifetime=Math.round(width/2)+2;
     block$.add(block[4]);
+
+    up.depth=block[0].depth+1;
+    up.depth=block[1].depth+1;
+    up.depth=block[2].depth+1;
+    up.depth=block[3].depth+1;
+    up.depth=block[4].depth+1;
+
+    down.depth=block[0].depth+1;
+    down.depth=block[1].depth+1;
+    down.depth=block[2].depth+1;
+    down.depth=block[3].depth+1;
+    down.depth=block[4].depth+1;
 }
 
 function spawnClouds() {
@@ -643,7 +685,7 @@ function spawnClouds() {
 }
 
 function spawnEnemy() {
-    ufo=createSprite(width+50,Math.round(random(xp-100,xp-10)),80,80);
+    ufo=createSprite(width+50,Math.round(random(xp-100,xp+20)),80,80);
     ufo.velocityX=-5;
     ufo.addAnimation("ufo",ufo_);
     ufo.scale=0.2;
