@@ -474,6 +474,7 @@ function draw() {
             if(touches[0].y<down.position.y+50&&touches[0].y>down.position.y-50) {
                 if(touches[0].x<up.position.x+30&&touches[0].x>up.position.x-30) {
                     rover.velocityY=-6;
+                    alert("UP");
                 }
             
                 if(touches[0].x<down.position.x+30&&touches[0].x>down.position.x-30) {
