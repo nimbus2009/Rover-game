@@ -331,6 +331,24 @@ function draw() {
 
         text("Survival",switch1.x+20,switch1.y+5);
         text("Collection",switch2.x+20,switch2.y+5);
+        
+        if(touches.length>0) {
+            if(touches[0].x<switch1.position.x+30&&touches[0].x>switch1.position.x-30) {
+                if(touches[0].y<switch1.position.y+30&&touches[0].y>switch1.position.y-30) {
+                    switch1.changeAnimation("sw1");
+                    switch2.changeAnimation("sw22");
+                    mode="survival";
+                }
+                if(touches[0].y<switch2.position.y+30&&touches[0].y>switch2.position.y-30) {
+                    switch2.changeAnimation("sw2");
+                    switch1.changeAnimation("sw12");
+                    mode="collection";
+                }
+            }
+            else {
+                state="start";   
+            }
+
 
         if(mousePressedOver(switch1)) {
             switch1.changeAnimation("sw1");
