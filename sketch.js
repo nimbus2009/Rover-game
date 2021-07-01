@@ -342,7 +342,7 @@ function draw() {
             click.play();
         }
         if(touches.length>0) {
-            state="rules";
+            state="rules2";
         }
         if(dt==1) {
             state="rules2";
