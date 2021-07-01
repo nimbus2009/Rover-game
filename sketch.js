@@ -476,7 +476,7 @@ function draw() {
             spawnEnemy();
         }
 
-        /*if(touches.length>0) {
+        if(touches.length>0) {
             if(touches[0].y<down.position.y+50&&touches[0].y>down.position.y-50) {
                 if(touches[0].x<up.position.x+50&&touches[0].x>up.position.x-50) {
                     rover.velocityY=-6;
@@ -493,7 +493,7 @@ function draw() {
                     state="pause";
                 }
             }
-        }*/
+        }
         
             
         
@@ -585,6 +585,51 @@ function draw() {
 
         cloud$.velocityXEach=0;
         ufo$.velocityXEach=0;
+        
+        if(touches.length>0) {
+            if(touches[0].y<switchPBtn.position.y+50&&touches[0].y>switchPBtn.position.y-50) {
+                if(touches[0].x<switchPBtn.position.x+50&&touches[0].x>switchPBtn.position.x-50) {
+                    switchPBtn.visible=!true;
+                    switchBtn.visible=false;
+                    restart.visible=false;
+
+                    block[0].velocityX=-4;
+                    block[1].velocityX=-4;
+                    block[2].velocityX=-4;
+                    block[3].velocityX=-4;
+                    block[4].velocityX=-4;
+
+                    click.play();
+
+                    block$.velocityXEach=-4;
+
+                    sd=2;
+                    //alert("UP");
+                }
+            }
+            else if(touches[0].y<restart.position.y+50&&touches[0].y>restart.position.y-50) {
+                if(touches[0].x<restart.position.x+50&&touches[0].x>restart.position.x-50) {
+                    state="start";
+                    rover.visible=true;
+
+                    cube.x=width+Math.round(random(1000,1400));
+                    cube.y=Math.round(random(rover.y,height-300));
+
+                    atom.x=width+Math.round(random(299,499));
+                    atom.y=Math.round(random(rover.y,height-300));
+
+                    score=0;
+
+                    switchPBtn.visible=false;
+                    restart.visible=false;
+                    ufo$.destroyEach();
+
+                    click.play();
+
+                    frameCount=0;
+                }
+            }
+        }
 
         if(mousePressedOver(restart)) {
             state="start";
@@ -625,8 +670,10 @@ function draw() {
             sd=2;
         }
         if(sd==2) {
+            touches=[];
             state="play";
-            console.error("Critical, but unknown");
+            sd=0;
+            //console.error("Critical, but unknown");
         }
         
     }
