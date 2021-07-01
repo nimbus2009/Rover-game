@@ -494,13 +494,13 @@ function draw() {
                rover.position.y-=100;
                //alert("UP");
         }
-        if(touches.length==2) {
+        else if(touches.length==2) {
                rover.setCollider("rectangle",0,rover.height-30,270,150);
                rover.changeAnimation("rover_");
-            
         }
-    
+        else {
         rover.velocityY=2;
+        }
         rover.debug=true;
         
         if(rover.isTouching(inv)) {
